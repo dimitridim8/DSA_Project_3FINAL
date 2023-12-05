@@ -10,15 +10,11 @@ public:
     int year;
     float rating;
     float price;
-    float globalSales; 
-    float naSales;     
-    float euSales;     
-    float jpSales;     
+    float globalSales; // Sales figure
 
+    // Constructor
     GameInfo(std::string name, std::string cons, std::string gen,
-             std::string pub, int yr, float rat, float prc,
-             float gSales, float na, float eu, float jp)
+             std::string pub, int yr, float rat, float prc, float gSales)
             : gameName(name), console(cons), genre(gen),
-              publisher(pub), year(yr), rating(rat), price(prc),
-              globalSales(gSales), naSales(na), euSales(eu), jpSales(jp) {}
+              publisher(pub), year(yr), rating(rat), price(prc), globalSales(gSales) {}
 };
