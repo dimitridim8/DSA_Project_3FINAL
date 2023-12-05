@@ -35,7 +35,7 @@ void VectorGraph::filterAndDisplayTopGames(const std::string& region, bool globa
         }
     });
 
-    const size_t topN = 10; // Adjust this number as needed
+    const size_t topN = 10; 
     for (size_t i = 0; i < std::min(topN, sortedGames.size()); ++i) {
         const auto& game = sortedGames[i];
         std::cout << "Game: " << game.gameName << ", Console: " << game.console
@@ -68,7 +68,7 @@ void VectorGraph::sortAndDisplayGames(const std::vector<GameInfo>& filteredGames
         }
     });
 
-    const size_t topN = 10; // Adjust this number as needed
+    const size_t topN = 10; 
     for (size_t i = 0; i < std::min(topN, sortedGames.size()); ++i) {
         const auto& game = sortedGames[i];
         std::cout << "Game: " << game.gameName << ", Console: " << game.console
