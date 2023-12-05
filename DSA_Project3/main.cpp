@@ -39,7 +39,8 @@ void loadFromCSV(const std::string& filepath, UnorderedMapGraph& umGraph, Vector
         // Read and parse sales data
         ss >> naSales >> euSales >> jpSales >> otherSales >> globalSales;
 
-        GameInfo game(gameName, console, genre, publisher, year, 0.0f, 0.0f, globalSales, naSales, euSales, jpSales);
+        GameInfo game(gameName, console, genre, publisher, year, 0.0f /*rating*/, 0.0f /*price*/, globalSales);
+
         umGraph.addGame(game);
         vGraph.addGame(game);
     }
@@ -138,7 +139,7 @@ void gameAdvice(VectorGraph& vGraph) {
 
 void combinedAdvice(UnorderedMapGraph& umGraph, VectorGraph& vGraph, float budget) {
     consoleAdvice(budget);  // Pass the budget to consoleAdvice
-    gameAdvice(vGraph);     
+    gameAdvice(vGraph);     // No change here
 }
 
 
@@ -161,10 +162,10 @@ int main() {
         budget = std::stof(budgetInput);
     } catch (const std::invalid_argument& e) {
         std::cerr << "Invalid input for budget. Please enter a valid number." << std::endl;
-        return 1; 
+        return 1; // or handle it differently
     } catch (const std::out_of_range& e) {
         std::cerr << "Input for budget is out of range. Please enter a smaller number." << std::endl;
-        return 1; 
+        return 1; // or handle it differently
     }
 
     std::cout << "What region are you in? (NA, EU, JP): ";
