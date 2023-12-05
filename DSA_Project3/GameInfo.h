@@ -10,12 +10,11 @@ public:
     int year;
     float rating;
     float price;
-    float globalSales; // Added
-    float naSales;     // Added
-    float euSales;     // Added
-    float jpSales;     // Added
+    float globalSales; 
+    float naSales;     
+    float euSales;     
+    float jpSales;     
 
-    // Update constructor accordingly
     GameInfo(std::string name, std::string cons, std::string gen,
              std::string pub, int yr, float rat, float prc,
              float gSales, float na, float eu, float jp)
